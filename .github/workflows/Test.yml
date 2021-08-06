@@ -17,9 +17,9 @@ jobs:
     steps:
       - shell: bash
         run: |
-          echo "<a href=\"https://s3-ap-southeast-2.amazonaws.com/gradfmir.assurity.co.nz/api/team1/test/cucumber-results-test-results.html\">Hi</a>" >  cucumber-results-test-results.html
+          echo "https://s3-ap-southeast-2.amazonaws.com/gradfmir.assurity.co.nz/api/team1/test/cucumber-results-test-results.html" >  cucumber-results-test-results.txt
       - name: Upload cucumber report
         uses: actions/upload-artifact@v2
         with:
           name: Cucumber reports
-          path: cucumber-results-test-results.html
+          path: cucumber-results-test-results.txt
