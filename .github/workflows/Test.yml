@@ -12,14 +12,14 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    name: Add 3 and 7
+    name: run cucumber tests
     runs-on: ubuntu-latest
     steps:
       - shell: bash
         run: |
-          expr 3 + 7 > math-homework.txt
-      - name: Upload math result for job 1
+          echo "<a href=\"https://s3-ap-southeast-2.amazonaws.com/gradfmir.assurity.co.nz/api/team1/test/cucumber-results-test-results.html\">Hi</a>" >  cucumber-results-test-results.html
+      - name: Upload cucumber report
         uses: actions/upload-artifact@v2
         with:
           name: Test
-          path: math-homework.txt
+          path: cucumber-results-test-results.html
