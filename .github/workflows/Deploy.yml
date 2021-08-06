@@ -12,14 +12,14 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
+    name: run cucumber tests
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Deploying...
+      - shell: bash
+        run: |
+          echo "https://images.ctfassets.net/6afke33grie2/3eiey2skOlXAMWFJqwSN5r/9d49445b0b1da27f87d4e020a7cea320/deploy-logo.png" >  cucumber-results-test-results.txt
+      - name: Upload cucumber report
+        uses: actions/upload-artifact@v2
+        with:
+          name: Deploy
+          path: cucumber-results-test-results.txt
