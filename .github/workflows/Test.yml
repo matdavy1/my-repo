@@ -17,7 +17,7 @@ jobs:
     steps:
       - shell: bash
         run: |
-          echo "https://s3-ap-southeast-2.amazonaws.com/gradfmir.assurity.co.nz/api/team1/test/cucumber-results-test-results.html" >  cucumber-results-test-results.txt
+          echo "https://www.lotus-qa.com/wp-content/uploads/2020/02/testing.jpg" >  cucumber-results-test-results.txt
       - name: Upload cucumber report
         uses: actions/upload-artifact@v2
         with:
