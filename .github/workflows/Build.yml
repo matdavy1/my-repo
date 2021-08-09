@@ -17,6 +17,7 @@ jobs:
     steps:
       - shell: bash
         run: |
+          sleep 60s
           echo "https://techcommunity.microsoft.com/t5/image/serverpage/image-id/73066i9A4C68E6EDEAEC11" >  cucumber-results-test-results.txt
       - name: Upload cucumber report
         uses: actions/upload-artifact@v2
