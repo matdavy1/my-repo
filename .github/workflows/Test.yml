@@ -23,3 +23,9 @@ jobs:
         with:
           name: Test
           path: cucumber-results-test-results.txt
+      - name: assertion
+        uses: nick-invision/assert-action@v1
+        with:
+          expected: testing
+          actual: testing1
+
