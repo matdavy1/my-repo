@@ -17,12 +17,15 @@ jobs:
     steps:
       - shell: bash
         run: |
+          echo "sample error message" > error-messages.txt
           echo "https://www.lotus-qa.com/wp-content/uploads/2020/02/testing.jpg" >  cucumber-results-test-results.txt
       - name: Upload cucumber report
         uses: actions/upload-artifact@v2
         with:
           name: Test
-          path: cucumber-results-test-results.txt
+          path: |
+            cucumber-results-test-results.txt
+            error-messages.txt
       - name: assertion
         uses: nick-invision/assert-action@v1
         with:
