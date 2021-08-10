@@ -23,5 +23,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Build
-          path: cucumber-results-test-results.txt error-messages.txt
+          path: | 
+            cucumber-results-test-results.txt
+            error-messages.txt
 
